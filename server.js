@@ -17,6 +17,10 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/api', itemRouter);
+app.get('/',function(req,res){
+  res.send("<center><b>Hello</b></center>\n<center><p><b>Welcome to Nodejs world</b></p></center>");
+
+});
 
 app.listen(PORT, function () {
   console.log('Listening on port ' + PORT);
