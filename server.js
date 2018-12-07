@@ -1,27 +1,28 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var itemRouter = require('./routers/item');
-
-var app = express();
-
-var PORT = 8080;
-var HOST_NAME = '127.0.0.1:27017';
-var DATABASE_NAME = 'Items';
-
-mongoose.connect('mongodb://' + HOST_NAME + '/' + DATABASE_NAME);
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-
-app.use('/api', itemRouter);
-app.get('/',function(req,res){
-  res.send("<center><b>Hello</b></center>\n<center><p><b>Welcome to Nodejs world</b></p></center>");
-
+var http = require('http');
+var fs = require('fs');
+//2.
+var server = http.createServer(function (req, resp) {
+    //3.
+    if (req.url === "/") {
+        fs.readFile("./index.html", function (error, pgResp) {
+            if (error) {
+                resp.writeHead(404);
+                resp.write('Contents you are looking are Not Found');
+            } else {
+                resp.writeHead(200, { 'Content-Type': 'text/html' });
+                resp.write(pgResp);
+            }
+             
+            resp.end();
+        });
+    } else {
+        //4.
+        resp.writeHead(200, { 'Content-Type': 'text/html' });
+        resp.write('<h1>Product Manaager</h1><br /><br />To create product please enter: ' + req.url);
+        resp.end();
+    }
 });
-
-app.listen(PORT, function () {
-  console.log('Listening on port ' + PORT);
-});
+//5.
+server.listen(8080);
+ 
+console.log('Server Started listening on 8080');
