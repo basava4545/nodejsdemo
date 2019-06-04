@@ -1,34 +1,17 @@
 {
-  "name": "restful-api-express-mongoose",
+  "name": "clientapp",
   "version": "1.0.0",
-  "description": "Example of a RESTful API built with Node.js, Express.js and Mongoose.",
-  "main": "app.js",
+  "description": "client application",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"{
-  "name": "restful-api-express-mongoose",
-  "version": "1.0.0",
-  "description": "Example of a RESTful API built with Node.js, Express.js and Mongoose.",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fedosejev/restful-api-express-mongoose.git"
-  },
-  "author": "Artemij Fedosejev",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fedosejev/restful-api-express-mongoose/issues"
-  },
-  "homepage": "https://github.com/fedosejev/restful-api-express-mongoose",
   "dependencies": {
-    "body-parser": "^1.14.1",
-    "express": "^4.13.3",
-    "filesystem": "^1.0.1",
-    "http": "0.0.0",
-    "mongoose": "^4.2.9"
+    "express": "^4.16.3",
+    "mongoose": "^5.3.13",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   }
 }
