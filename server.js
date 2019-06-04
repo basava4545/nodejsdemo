@@ -31,6 +31,6 @@ app.get('/', (req, res) => {
 //     }
 // });
 //5.
-app.listen(8000);
+app.listen(80);
  
-console.log('Server Started listening on 8000');
+console.log('Server Started listening on 80');
